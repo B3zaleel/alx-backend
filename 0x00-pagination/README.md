@@ -56,7 +56,7 @@ This project contains tasks for learning to paginate data.
   + Make sure to reuse get_page in your implementation.
   + You can use the `math` module if necessary.
 
-+ [ ] 3. **Deletion-resilient hypermedia pagination**<br/>[3-hypermedia_del_pagination.py](3-hypermedia_del_pagination.py) contains a Python script that meets the following requirements:
++ [x] 3. **Deletion-resilient hypermedia pagination**<br/>[3-hypermedia_del_pagination.py](3-hypermedia_del_pagination.py) contains a Python script that meets the following requirements:
   + The goal here is that if between two queries, certain rows are removed from the dataset, the user does not miss items from dataset when changing page.
   + Start [3-hypermedia_del_pagination.py](3-hypermedia_del_pagination.py) with this code:
     ```python
