@@ -44,7 +44,7 @@ This project contains tasks for learning to paginate data.
     + Use `index_range` to find the correct indexes to paginate the dataset correctly and return the appropriate page of the dataset (i.e. the correct list of rows).
     + If the input arguments are out of range for the dataset, an empty list should be returned.
 
-+ [ ] 2. **Hypermedia pagination**<br/>[2-hypermedia_pagination.py](2-hypermedia_pagination.py) contains a Python script that meets the following requirements:
++ [x] 2. **Hypermedia pagination**<br/>[2-hypermedia_pagination.py](2-hypermedia_pagination.py) contains a Python script that meets the following requirements:
   + Replicate code from the previous task.
   + Implement a `get_hyper` method that takes the same arguments (and defaults) as `get_page` and returns a dictionary containing the following key-value pairs:
     + `page_size`: the length of the returned dataset page.
