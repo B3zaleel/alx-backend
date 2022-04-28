@@ -8,7 +8,7 @@ This project contains tasks for learning to paginate data.
   + The function should return a tuple of size two containing a start index and an end index corresponding to the range of indexes to return in a list for those particular pagination parameters.
   + Page numbers are 1-indexed, i.e. the first page is page 1.
 
-+ [ ] 1. **Simple pagination**<br/>[1-simple_pagination.py](1-simple_pagination.py) contains a Python script that meets the following requirements:
++ [x] 1. **Simple pagination**<br/>[1-simple_pagination.py](1-simple_pagination.py) contains a Python script that meets the following requirements:
   + Copy `index_range` from the previous task and the following class into your code.
     ```python
     import csv
