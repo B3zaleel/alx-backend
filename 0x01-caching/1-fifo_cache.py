@@ -12,6 +12,8 @@ class FIFOCache(BaseCaching):
     removal mechanism when the limit is reached.
     """
     def __init__(self):
+        """Initiliazes the cache.
+        """
         super().__init__()
         self.cache_data = OrderedDict()
 
