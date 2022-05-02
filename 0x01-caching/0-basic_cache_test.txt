@@ -1,5 +1,5 @@
-#!/usr/bin/env bash
-python3 -m doctest -v "$0"
+#!/usr/bin/env fish
+python3 -m doctest -v (basename (status -f))
 exit
 """
 >>> BasicCache = __import__('0-basic_cache').BasicCache
