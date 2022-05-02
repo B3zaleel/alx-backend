@@ -20,7 +20,7 @@ This project contains tasks for learning to cache data.
   + `def put(self, key, item):`:
     + Must assign to the dictionary `self.cache_data` the `item` value for the key `key`.
     + If `key` or `item` is `None`, this method should not do anything.
-    + If the number of items in `self.cache_data` is higher that `BaseCaching.MAX_ITEMS`:
+    + If the number of items in `self.cache_data` is higher than `BaseCaching.MAX_ITEMS`:
       + You must discard the first item put in cache (FIFO algorithm).
       + You must print `DISCARD: ` with the key discarded and following by a new line.
   + `def get(self, key):`:
@@ -33,7 +33,7 @@ This project contains tasks for learning to cache data.
   + `def put(self, key, item):`:
     + Must assign to the dictionary `self.cache_data` the `item` value for the key `key`.
     + If `key` or `item` is `None`, this method should not do anything.
-    + If the number of items in `self.cache_data` is higher that `BaseCaching.MAX_ITEMS`:
+    + If the number of items in `self.cache_data` is higher than `BaseCaching.MAX_ITEMS`:
       + You must discard the last item put in cache (LIFO algorithm).
       + You must print `DISCARD: ` with the `key` discarded and following by a new line.
   + `def get(self, key):`:
@@ -46,7 +46,7 @@ This project contains tasks for learning to cache data.
   + `def put(self, key, item):`:
     + Must assign to the dictionary `self.cache_data` the `item` value for the key `key`.
     + If `key` or `item` is `None`, this method should not do anything.
-    + If the number of items in `self.cache_data` is higher that `BaseCaching.MAX_ITEMS`:
+    + If the number of items in `self.cache_data` is higher than `BaseCaching.MAX_ITEMS`:
       + You must discard the least recently used item (LRU algorithm).
       + You must print `DISCARD: ` with the `key` discarded and following by a new line.
   + `def get(self, key):`:
@@ -59,7 +59,7 @@ This project contains tasks for learning to cache data.
   + `def put(self, key, item):`:
     + Must assign to the dictionary `self.cache_data` the `item` value for the key `key`.
     + If `key` or `item` is `None`, this method should not do anything.
-    + If the number of items in `self.cache_data` is higher that `BaseCaching.MAX_ITEMS`:
+    + If the number of items in `self.cache_data` is higher than `BaseCaching.MAX_ITEMS`:
       + You must discard the most recently used item (MRU algorithm).
       + You must print `DISCARD: ` with the `key` discarded and following by a new line
   + `def get(self, key):`:
@@ -72,7 +72,7 @@ This project contains tasks for learning to cache data.
   + `def put(self, key, item):`:
     + Must assign to the dictionary `self.cache_data` the `item` value for the key `key`.
     + If `key` or `item` is `None`, this method should not do anything.
-    + If the number of items in `self.cache_data` is higher that `BaseCaching.MAX_ITEMS`:
+    + If the number of items in `self.cache_data` is higher than `BaseCaching.MAX_ITEMS`:
       + You must discard the least frequency used item (LFU algorithm).
       + If you find more than 1 item to discard, you must use the LRU algorithm to discard only the least recently used.
       + You must print `DISCARD: ` with the `key` discarded and following by a new line.
