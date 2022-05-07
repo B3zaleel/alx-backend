@@ -37,7 +37,7 @@ class LFUCache(BaseCaching):
                 max_positions.append(i)
         max_positions.reverse()
         for pos in max_positions:
-            if self.keys_freq[pos][1] >= mru_freq:
+            if self.keys_freq[pos][1] > mru_freq:
                 break
             ins_pos = pos
         self.keys_freq.pop(mru_pos)
