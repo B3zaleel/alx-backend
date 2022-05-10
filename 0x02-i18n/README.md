@@ -18,7 +18,7 @@ This project contains tasks for learning to create internationalized web pages w
   + Use `Config` to set Babel’s default locale (`"en"`) and timezone (`"UTC"`).
   + Use that class as config for your Flask app.
 
-+ [ ] 2. **Get locale from request**
++ [x] 2. **Get locale from request**
   + Copy [1-app.py](1-app.py) into [2-app.py](2-app.py) and [templates/1-index.html](templates/1-index.html) into [templates/2-index.html](templates/2-index.html).
   + Create a `get_locale` function with the `babel.localeselector` decorator. Use `request.accept_languages` to determine the best match with our supported languages.
 
