@@ -36,7 +36,7 @@ def get_user() -> Union[Dict, None]:
 
 
 @app.before_request
-def before_request():
+def before_request() -> None:
     """Performs some routines before each request's resolution.
     """
     user = get_user()
@@ -44,7 +44,7 @@ def before_request():
 
 
 @babel.localeselector
-def get_locale():
+def get_locale() -> str:
     """Retrieves the locale for a web page.
     """
     locale = request.args.get('locale', '')

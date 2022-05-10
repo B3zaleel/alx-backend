@@ -38,7 +38,7 @@ def get_user() -> Union[Dict, None]:
 
 
 @app.before_request
-def before_request():
+def before_request() -> None:
     """Performs some routines before each request's resolution.
     """
     user = get_user()
@@ -46,7 +46,7 @@ def before_request():
 
 
 @babel.localeselector
-def get_locale():
+def get_locale() -> str:
     """Retrieves the locale for a web page.
     """
     locale = request.args.get('locale', '')
@@ -62,16 +62,16 @@ def get_locale():
 
 
 @babel.timezoneselector
-def get_timezone():
+def get_timezone() -> str:
     """Retrieves the timezone for a web page.
     """
     timezone = request.args.get('timezone', '').strip()
     if not timezone and g.user:
         timezone = g.user['timezone']
     try:
-        return pytz.timezone(timezone)
+        return pytz.timezone(timezone).zone
     except pytz.exceptions.UnknownTimeZoneError:
-        return pytz.timezone(app.config['BABEL_DEFAULT_TIMEZONE'])
+        return app.config['BABEL_DEFAULT_TIMEZONE']
 
 
 @app.route('/')

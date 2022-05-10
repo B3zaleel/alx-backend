@@ -38,7 +38,7 @@ def get_user() -> Union[Dict, None]:
 
 
 @app.before_request
-def before_request():
+def before_request() -> None:
     """Performs some routines before each request's resolution.
     """
     user = get_user()
@@ -46,7 +46,7 @@ def before_request():
 
 
 @babel.localeselector
-def get_locale():
+def get_locale() -> str:
     """Retrieves the locale for a web page.
     """
     queries = request.query_string.decode('utf-8').split('&')
@@ -68,29 +68,24 @@ def get_locale():
 
 
 @babel.timezoneselector
-def get_timezone():
+def get_timezone() -> str:
     """Retrieves the timezone for a web page.
     """
     timezone = request.args.get('timezone', '').strip()
-    user_details = getattr(g, 'user', None)
-    if not timezone and user_details:
-        timezone = user_details['timezone']
+    if not timezone and g.user:
+        timezone = g.user['timezone']
     try:
-        return pytz.timezone(timezone)
+        return pytz.timezone(timezone).zone
     except pytz.exceptions.UnknownTimeZoneError:
-        return pytz.timezone(app.config['BABEL_DEFAULT_TIMEZONE'])
+        return app.config['BABEL_DEFAULT_TIMEZONE']
 
 
 @app.route('/')
 def get_index() -> str:
     """The home/index page.
     """
-    user_details = getattr(g, 'user', None)
-    ctxt = {
-        'login_details': user_details,
-        'current_time': format_datetime(),
-    }
-    return render_template('index.html', **ctxt)
+    g.time = format_datetime()
+    return render_template('index.html')
 
 
 if __name__ == '__main__':
