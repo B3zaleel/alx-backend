@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """A Basic Flask app with internationalization support.
 """
-from flask import Flask, render_template, request, g
 from flask_babel import Babel
+from flask import Flask, render_template, request, g
 
 
 class Config:
@@ -28,13 +28,10 @@ users = {
 def get_user():
     """Retrieves a user based on a user id.
     """
-    login_id = request.args.get('login_as', '')
-    try:
-        if login_id:
-            return users.get(int(login_id), None)
-        return None
-    except Exception:
-        return None
+    login_id = request.args.get('login_as')
+    if login_id:
+        return users.get(int(login_id))
+    return None
 
 
 @app.before_request
@@ -42,7 +39,7 @@ def before_request():
     """Performs some routines before each request's resolution.
     """
     user = get_user()
-    setattr(g, 'user', user)
+    g.user = user
 
 
 @babel.localeselector
