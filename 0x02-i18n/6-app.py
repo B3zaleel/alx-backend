@@ -46,13 +46,9 @@ def get_user() -> Union[Dict, None]:
 
 @app.before_request
 def before_request():
-    queries = request.query_string.decode('utf-8').split('&')
-    query_table = dict(map(
-        lambda x: (x if '=' in x else '{}='.format(x)).split('='),
-        queries,
-    ))
-    login_id = query_table.get('login_as', '')
-    user = get_user(login_id)
+    """Performs some routines before each request's resolution.
+    """
+    user = get_user()
     setattr(g, 'user', user)
 
 
