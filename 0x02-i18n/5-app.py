@@ -38,6 +38,8 @@ def get_user(id=None) -> Union[Dict, None]:
 
 @app.before_request
 def before_request() -> None:
+    """Performs some routines before each request's resolution.
+    """
     queries = request.query_string.decode('utf-8').split('&')
     query_table = dict(map(
         lambda x: (x if '=' in x else '{}='.format(x)).split('='),
