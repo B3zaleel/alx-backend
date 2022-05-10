@@ -59,7 +59,7 @@ This project contains tasks for learning to create internationalized web pages w
   + Visiting [`http://127.0.0.1:5000/?locale=fr`](http://127.0.0.1:5000/?locale=fr) should display this level 1 heading:
     ![Hello World! in French](assets/task_4_1.png)
 
-+ [ ] 5. **Mock logging in**
++ [x] 5. **Mock logging in**
   + Copy [4-app.py](4-app.py) into [5-app.py](5-app.py) and [templates/4-index.html](templates/4-index.html) into [templates/5-index.html](templates/5-index.html).
   + Creating a user login system is outside the scope of this project. To emulate a similar behavior, copy the following user table into [5-app.py](5-app.py).
     ```python
