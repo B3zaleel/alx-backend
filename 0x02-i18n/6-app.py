@@ -1,9 +1,8 @@
 #!/usr/bin/env python3
 """A Basic Flask app with internationalization support.
 """
-import re
-from flask import Flask, render_template, request, g
 from flask_babel import Babel
+from flask import Flask, render_template, request, g
 
 
 class Config:
@@ -52,11 +51,10 @@ def get_locale():
         return locale
     if g.user and g.user['locale'] in app.config["LANGUAGES"]:
         return g.user['locale']
-    langs = re.split('[,;]', str(request.accept_languages))
-    for lang in langs:
-        if lang in app.config["LANGUAGES"]:
-            return lang
-    return app.config['BABEL_DEFAULT_LOCALE']
+    header_locale = request.headers.get('locale', '')
+    if header_locale in app.config["LANGUAGES"]:
+        return header_locale
+    return request.accept_languages.best_match(app.config["LANGUAGES"])
 
 
 @app.route('/')
