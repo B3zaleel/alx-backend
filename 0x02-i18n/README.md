@@ -56,7 +56,7 @@ This project contains tasks for learning to create internationalized web pages w
   + Copy [3-app.py](3-app.py) into [4-app.py](4-app.py) and [templates/3-index.html](templates/3-index.html) into [templates/4-index.html](templates/4-index.html).
   + In your `get_locale` function, detect if the incoming request contains `locale` argument and if its value is a supported locale, return it. If not or if the parameter is not present, resort to the previous default behavior.
   + You should be able to test different translations by visiting `http://127.0.0.1:5000?locale=[fr|en]`.
-  + Visiting [`http://127.0.0.1:5000/?locale=fr`](http://127.0.0.1:5000/?locale=fr) should display this level 1 heading:
+  + Visiting [`http://127.0.0.1:5000/?locale=fr`](http://127.0.0.1:5000/?locale=fr) should display this level 1 heading:<br/>
     ![Hello World! in French](assets/task_4_1.png)
 
 + [x] 5. **Mock logging in**
@@ -78,9 +78,9 @@ This project contains tasks for learning to create internationalized web pages w
     |:-|:-|:-|
     | logged_in_as | "You are logged in as %(username)s." | "Vous êtes connecté en tant que %(username)s." |
     | not_logged_in | "You are not logged in." | "Vous n'êtes pas connecté." |
-  + Visiting [http://127.0.0.1:5000/](http://127.0.0.1:5000/) in your browser should display this:
+  + Visiting [http://127.0.0.1:5000/](http://127.0.0.1:5000/) in your browser should display this:<br/>
     ![Hello World! in English with a logged out message](assets/task_5_1.png)
-  + Visiting [http://127.0.0.1:5000/?login_as=2](http://127.0.0.1:5000/?login_as=2) in your browser should display this:
+  + Visiting [http://127.0.0.1:5000/?login_as=2](http://127.0.0.1:5000/?login_as=2) in your browser should display this:<br/>
     ![Hello World! in English with a logged in message](assets/task_5_2.png)
 
 + [x] 6. **Use user locale**
@@ -91,7 +91,7 @@ This project contains tasks for learning to create internationalized web pages w
     2. Locale from user settings.
     3. Locale from request header.
     4. Default locale.
-  + Test by logging in as different users.
+  + Test by logging in as different users.<br/>
     ![Hello World! in French with a logged in message](assets/task_6_1.png)
 
 + [x] 7. **Infer appropriate time zone**
@@ -111,7 +111,7 @@ This project contains tasks for learning to create internationalized web pages w
     | **msgid** | **English** | **French** |
     |:-|:-|:-|
     | current_time_is | "The current time is %(current_time)s." | "Nous sommes le %(current_time)s." |
-  + Displaying the time in French looks like this:
+  + Displaying the time in French looks like this:<br/>
     ![Hello World! with a logged in message and the current time in French](assets/task_8_1.png)
-  + Displaying the time in English looks like this:
+  + Displaying the time in English looks like this:<br/>
     ![Hello World! with a logged in message and the current time in English](assets/task_8_2.png)
