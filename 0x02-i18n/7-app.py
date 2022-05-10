@@ -31,12 +31,9 @@ def get_user():
     """Retrieves a user based on a user id.
     """
     login_id = request.args.get('login_as', '')
-    try:
-        if login_id:
-            return users.get(int(login_id), None)
-        return None
-    except Exception:
-        return None
+    if login_id:
+        return users.get(int(login_id), None)
+    return None
 
 
 @app.before_request
@@ -44,7 +41,7 @@ def before_request():
     """Performs some routines before each request's resolution.
     """
     user = get_user()
-    setattr(g, 'user', user)
+    g.user = user
 
 
 @babel.localeselector
@@ -54,9 +51,8 @@ def get_locale():
     locale = request.args.get('locale', '')
     if locale in app.config["LANGUAGES"]:
         return locale
-    user_details = getattr(g, 'user', None)
-    if user_details and user_details['locale'] in app.config["LANGUAGES"]:
-        return user_details['locale']
+    if g.user and g.user['locale'] in app.config["LANGUAGES"]:
+        return g.user['locale']
     langs = re.split('[,;]', str(request.accept_languages))
     for lang in langs:
         if lang in app.config["LANGUAGES"]:
@@ -69,9 +65,8 @@ def get_timezone():
     """Retrieves the timezone for a web page.
     """
     timezone = request.args.get('timezone', '').strip()
-    user_details = getattr(g, 'user', None)
-    if not timezone and user_details:
-        timezone = user_details['timezone']
+    if not timezone and g.user:
+        timezone = g.user['timezone']
     try:
         return pytz.timezone(timezone)
     except pytz.exceptions.UnknownTimeZoneError:
@@ -82,11 +77,7 @@ def get_timezone():
 def get_index():
     """The home/index page.
     """
-    user_details = getattr(g, 'user', None)
-    ctxt = {
-        'login_details': user_details,
-    }
-    return render_template('7-index.html', **ctxt)
+    return render_template('7-index.html')
 
 
 if __name__ == '__main__':

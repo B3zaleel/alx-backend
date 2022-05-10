@@ -56,11 +56,7 @@ def get_locale():
 def get_index():
     """The home/index page.
     """
-    user_details = getattr(g, 'user', None)
-    ctxt = {
-        'login_details': user_details,
-    }
-    return render_template('5-index.html', **ctxt)
+    return render_template('5-index.html')
 
 
 if __name__ == '__main__':
