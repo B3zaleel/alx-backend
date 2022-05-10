@@ -31,12 +31,7 @@ users = {
 def get_user() -> Union[Dict, None]:
     """Retrieves a user based on a user id.
     """
-    queries = request.query_string.decode('utf-8').split('&')
-    query_table = dict(map(
-        lambda x: (x if '=' in x else '{}='.format(x)).split('='),
-        queries,
-    ))
-    login_id = query_table.get('login_as', '')
+    login_id = request.args.get('login_as', '')
     try:
         if login_id:
             return users.get(int(login_id), None)
@@ -57,12 +52,7 @@ def before_request():
 def get_locale():
     """Retrieves the locale for a web page.
     """
-    queries = request.query_string.decode('utf-8').split('&')
-    query_table = dict(map(
-        lambda x: (x if '=' in x else '{}='.format(x)).split('='),
-        queries,
-    ))
-    locale = query_table.get('locale', '')
+    locale = request.args.get('locale', '')
     if locale in app.config["LANGUAGES"]:
         return locale
     user_details = getattr(g, 'user', None)
@@ -79,12 +69,7 @@ def get_locale():
 def get_timezone():
     """Retrieves the timezone for a web page.
     """
-    queries = request.query_string.decode('utf-8').split('&')
-    query_table = dict(map(
-        lambda x: (x if '=' in x else '{}='.format(x)).split('='),
-        queries,
-    ))
-    timezone = query_table.get('timezone', '').strip()
+    timezone = request.args.get('timezone', '').strip()
     user_details = getattr(g, 'user', None)
     if not timezone and user_details:
         timezone = user_details['timezone']
