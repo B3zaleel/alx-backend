@@ -83,7 +83,7 @@ This project contains tasks for learning to create internationalized web pages w
   + Visiting [http://127.0.0.1:5000/?login_as=2](http://127.0.0.1:5000/?login_as=2) in your browser should display this:
     ![Hello World! in English with a logged in message](assets/task_5_2.png)
 
-+ [ ] 6. **Use user locale**
++ [x] 6. **Use user locale**
   + Copy [5-app.py](5-app.py) into [6-app.py](6-app.py) and [templates/5-index.html](templates/5-index.html) into [templates/6-index.html](templates/6-index.html).
   + Change your `get_locale` function to use a user’s preferred locale if it is supported.
   + The order of priority should be:
