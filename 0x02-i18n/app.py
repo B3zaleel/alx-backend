@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 """A Basic Flask app with internationalization support.
 """
-import re
 import pytz
 from typing import Union, Dict
 from flask_babel import Babel, format_datetime
@@ -60,10 +59,9 @@ def get_locale() -> str:
     user_details = getattr(g, 'user', None)
     if user_details and user_details['locale'] in app.config["LANGUAGES"]:
         return user_details['locale']
-    langs = re.split('[,;]', str(request.accept_languages))
-    for lang in langs:
-        if lang in app.config["LANGUAGES"]:
-            return lang
+    header_locale = request.headers.get('locale', '')
+    if header_locale in app.config["LANGUAGES"]:
+        return header_locale
     return app.config['BABEL_DEFAULT_LOCALE']
 
 
