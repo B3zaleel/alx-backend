@@ -94,7 +94,7 @@ This project contains tasks for learning to create internationalized web pages w
   + Test by logging in as different users.
     ![Hello World! in French with a logged in message](assets/task_6_1.png)
 
-+ [ ] 7. **Infer appropriate time zone**
++ [x] 7. **Infer appropriate time zone**
   + Copy [6-app.py](6-app.py) into [7-app.py](7-app.py) and [templates/6-index.html](templates/6-index.html) into [templates/7-index.html](templates/7-index.html).
   + Define a `get_timezone` function and use the `babel.timezoneselector` decorator.
   + The logic should be the same as `get_locale`:
