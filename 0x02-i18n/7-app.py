@@ -2,9 +2,9 @@
 """A Basic Flask app with internationalization support.
 """
 import re
+import pytz
 from flask import Flask, render_template, request, g
 from flask_babel import Babel
-import pytz
 
 
 class Config:
@@ -87,7 +87,7 @@ def get_timezone():
     try:
         return pytz.timezone(timezone)
     except pytz.exceptions.UnknownTimeZoneError:
-        return app.config['BABEL_DEFAULT_TIMEZONE']
+        return pytz.timezone(app.config['BABEL_DEFAULT_TIMEZONE'])
 
 
 @app.route('/')
