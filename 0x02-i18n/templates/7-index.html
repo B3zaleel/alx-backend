@@ -9,7 +9,7 @@
 <body>
     <h1>{{ _('home_header') }}</h1>
     {% if g.user %}
-    <h4>{{ _('logged_in_as', username=g.user['name']) }}</h4>
+    <h4>{{ _('logged_in_as', username=g.user.get('name', '')) }}</h4>
     {% else %}
     <h4>{{ _('not_logged_in') }}</h4>
     {% endif %}
