@@ -38,7 +38,10 @@ def get_user(id=None):
 @app.before_request
 def before_request():
     queries = request.query_string.decode('utf-8').split('&')
-    query_table = dict(map(lambda x: x.split('='), queries))
+    query_table = dict(map(
+        lambda x: (x if '=' in x else '{}='.format(x)).split('='),
+        queries,
+    ))
     login_id = query_table.get('login_as', '')
     user = get_user(login_id)
     setattr(g, 'user', user)
@@ -49,7 +52,10 @@ def get_locale():
     """Retrieves the locale for a web page.
     """
     queries = request.query_string.decode('utf-8').split('&')
-    query_table = dict(map(lambda x: x.split('='), queries))
+    query_table = dict(map(
+        lambda x: (x if '=' in x else '{}='.format(x)).split('='),
+        queries,
+    ))
     locale = query_table.get('locale', '')
     if locale in app.config_class.LANGUAGES:
         return locale

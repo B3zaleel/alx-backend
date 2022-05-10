@@ -25,7 +25,10 @@ def get_locale():
     """Retrieves the locale for a web page.
     """
     queries = request.query_string.decode('utf-8').split('&')
-    query_table = dict(map(lambda x: x.split('='), queries))
+    query_table = dict(map(
+        lambda x: (x if '=' in x else '{}='.format(x)).split('='),
+        queries,
+    ))
     if 'locale' in query_table:
         if query_table['locale'] in app.config_class.LANGUAGES:
             return query_table['locale']

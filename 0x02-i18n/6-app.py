@@ -40,7 +40,7 @@ def get_user(id=None):
 def before_request():
     queries = request.query_string.decode('utf-8').split('&')
     query_table = dict(map(
-        lambda x: (x if '=' in x else '=').split('='),
+        lambda x: (x if '=' in x else '{}='.format(x)).split('='),
         queries,
     ))
     login_id = query_table.get('login_as', '')
@@ -54,7 +54,7 @@ def get_locale():
     """
     queries = request.query_string.decode('utf-8').split('&')
     query_table = dict(map(
-        lambda x: (x if '=' in x else '=').split('='),
+        lambda x: (x if '=' in x else '{}='.format(x)).split('='),
         queries,
     ))
     locale = query_table.get('locale', '')
