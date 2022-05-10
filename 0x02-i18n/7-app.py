@@ -3,8 +3,9 @@
 """
 import re
 import pytz
-from flask import Flask, render_template, request, g
 from flask_babel import Babel
+from typing import Union, Dict
+from flask import Flask, render_template, request, g
 
 
 class Config:
@@ -27,7 +28,7 @@ users = {
 }
 
 
-def get_user():
+def get_user() -> Union[Dict, None]:
     """Retrieves a user based on a user id.
     """
     login_id = request.args.get('login_as', '')
@@ -74,7 +75,7 @@ def get_timezone():
 
 
 @app.route('/')
-def get_index():
+def get_index() -> str:
     """The home/index page.
     """
     return render_template('7-index.html')
