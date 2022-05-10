@@ -3,7 +3,6 @@
 """
 import re
 import pytz
-from typing import Union, Dict
 from flask import Flask, render_template, request, g
 from flask_babel import Babel, format_datetime
 
@@ -28,7 +27,7 @@ users = {
 }
 
 
-def get_user() -> Union[Dict, None]:
+def get_user():
     """Retrieves a user based on a user id.
     """
     login_id = request.args.get('login_as', '')
