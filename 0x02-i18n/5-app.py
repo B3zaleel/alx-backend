@@ -26,11 +26,19 @@ users = {
 }
 
 
-def get_user(id=None) -> Union[Dict, None]:
+def get_user() -> Union[Dict, None]:
     """Retrieves a user based on a user id.
     """
+    queries = request.query_string.decode('utf-8').split('&')
+    query_table = dict(map(
+        lambda x: (x if '=' in x else '{}='.format(x)).split('='),
+        queries,
+    ))
+    login_id = query_table.get('login_as', '')
     try:
-        return users.get(int(id), None)
+        if login_id:
+            return users.get(int(login_id), None)
+        return None
     except Exception:
         return None
 
@@ -39,13 +47,7 @@ def get_user(id=None) -> Union[Dict, None]:
 def before_request() -> None:
     """Performs some routines before each request's resolution.
     """
-    queries = request.query_string.decode('utf-8').split('&')
-    query_table = dict(map(
-        lambda x: (x if '=' in x else '{}='.format(x)).split('='),
-        queries,
-    ))
-    login_id = query_table.get('login_as', '')
-    user = get_user(login_id)
+    user = get_user()
     setattr(g, 'user', user)
 
 
