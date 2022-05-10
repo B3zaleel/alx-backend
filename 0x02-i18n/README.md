@@ -22,7 +22,7 @@ This project contains tasks for learning to create internationalized web pages w
   + Copy [1-app.py](1-app.py) into [2-app.py](2-app.py) and [templates/1-index.html](templates/1-index.html) into [templates/2-index.html](templates/2-index.html).
   + Create a `get_locale` function with the `babel.localeselector` decorator. Use `request.accept_languages` to determine the best match with our supported languages.
 
-+ [ ] 3. **Parametrize templates**
++ [x] 3. **Parametrize templates**
   + Copy [2-app.py](2-app.py) into [3-app.py](3-app.py) and [templates/2-index.html](templates/2-index.html) into [templates/3-index.html](templates/3-index.html).
   + Use the `_` or `gettext` function to parametrize your templates. Use the message IDs `home_title` and `home_header`.
   + Create a `babel.cfg` file containing:
