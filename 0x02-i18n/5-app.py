@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """A Basic Flask app with internationalization support.
 """
+from typing import Union, Dict
 from flask import Flask, render_template, request, g
 from flask_babel import Babel
 
@@ -26,7 +27,7 @@ users = {
 }
 
 
-def get_user(id=None):
+def get_user(id=None) -> Union[Dict, None]:
     """Retrieves a user based on a user id.
     """
     try:
@@ -36,7 +37,7 @@ def get_user(id=None):
 
 
 @app.before_request
-def before_request():
+def before_request() -> None:
     queries = request.query_string.decode('utf-8').split('&')
     query_table = dict(map(
         lambda x: (x if '=' in x else '{}='.format(x)).split('='),
@@ -48,7 +49,7 @@ def before_request():
 
 
 @babel.localeselector
-def get_locale():
+def get_locale() -> str:
     """Retrieves the locale for a web page.
     """
     queries = request.query_string.decode('utf-8').split('&')
