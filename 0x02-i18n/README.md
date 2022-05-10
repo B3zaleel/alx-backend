@@ -51,7 +51,7 @@ This project contains tasks for learning to create internationalized web pages w
     ```
   + Reload the home page of your app and make sure that the correct messages show up.
 
-+ [ ] 4. **Force locale with URL parameter**
++ [x] 4. **Force locale with URL parameter**
   + In this task, you will implement a way to force a particular locale by passing the `locale=fr` parameter to your app’s URLs.
   + Copy [3-app.py](3-app.py) into [4-app.py](4-app.py) and [templates/3-index.html](templates/3-index.html) into [templates/4-index.html](templates/4-index.html).
   + In your `get_locale` function, detect if the incoming request contains `locale` argument and if its value is a supported locale, return it. If not or if the parameter is not present, resort to the previous default behavior.
