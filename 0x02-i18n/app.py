@@ -11,13 +11,12 @@ class Config:
     """Represents a Flask Babel configuration.
     """
     LANGUAGES = ["en", "fr"]
+    BABEL_DEFAULT_LOCALE = "en"
+    BABEL_DEFAULT_TIMEZONE = "UTC"
 
 
 app = Flask(__name__)
-app.config_class = Config
-app.config['LANGUAGES'] = Config.LANGUAGES
-app.config['BABEL_DEFAULT_LOCALE'] = 'en'
-app.config['BABEL_DEFAULT_TIMEZONE'] = 'UTC'
+app.config.from_object(Config)
 app.url_map.strict_slashes = False
 babel = Babel(app)
 users = {
@@ -59,14 +58,14 @@ def get_locale():
         queries,
     ))
     locale = query_table.get('locale', '')
-    if locale in app.config_class.LANGUAGES:
+    if locale in app.config["LANGUAGES"]:
         return locale
     user_details = getattr(g, 'user', None)
-    if user_details and user_details['locale'] in app.config_class.LANGUAGES:
+    if user_details and user_details['locale'] in app.config["LANGUAGES"]:
         return user_details['locale']
     langs = re.split('[,;]', str(request.accept_languages))
     for lang in langs:
-        if lang in app.config_class.LANGUAGES:
+        if lang in app.config["LANGUAGES"]:
             return lang
     return app.config['BABEL_DEFAULT_LOCALE']
 
