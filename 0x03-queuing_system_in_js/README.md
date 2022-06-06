@@ -125,7 +125,7 @@ This project contains tasks for learning to create a queueing system in JavaScri
     + You will need to have two node processes to run each script at the same time.
   + Now you have a basic Redis-based queuing system where you have a process to generate job and a second one to process it. These 2 processes can be in 2 different servers, which we also call "background workers".
 
-+ [ ] 6. **Create the Job creator**
++ [x] 6. **Create the Job creator**
   + In a file named [`6-job_creator.js`](6-job_creator.js):
     + Create a queue with `Kue`.
     + Create an object containing the Job data with the following format:
