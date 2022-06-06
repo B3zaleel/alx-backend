@@ -142,7 +142,7 @@ This project contains tasks for learning to create a queueing system in JavaScri
   + Nothing else will happen - to process the job, go to the next task!
   + If you execute multiple time this file, you will see the `JOB ID` increasing - it means you are storing new job to process…
 
-+ [ ] 7. **Create the Job processor**
++ [x] 7. **Create the Job processor**
   + In a file named [`6-job_processor.js`](6-job_processor.js):
   + Create a queue with `Kue`.
   + Create a function named `sendNotification`:
