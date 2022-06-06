@@ -46,7 +46,7 @@ This project contains tasks for learning to create a queueing system in JavaScri
   + **Requirements:**
     + Use callbacks for any of the operation, we will look at async operations later.
 
-+ [ ] 3. **Node Redis client and async operations**
++ [x] 3. **Node Redis client and async operations**
   + In a file [`2-redis_op_async.js`](2-redis_op_async.js), copy the code from the previous exercise ([`1-redis_op.js`](1-redis_op.js)).
   + Using `promisify`, modify the function `displaySchoolValue` to use ES6's `async / await`.
   + Same result as [`1-redis_op.js`](1-redis_op.js).
