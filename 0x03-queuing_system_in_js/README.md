@@ -98,7 +98,7 @@ This project contains tasks for learning to create a queueing system in JavaScri
   + **Requirements:**
     + Use callbacks for any of the operation, we will look at async operations later.
 
-+ [ ] 5. **Node Redis client publisher and subscriber**
++ [x] 5. **Node Redis client publisher and subscriber**
   + In a file named [`5-subscriber.js`](5-subscriber.js), create a redis client:
     + On connect, it should log the message `Redis client connected to the server`.
     + On error, it should log the message `Redis client not connected to the server: ERROR MESSAGE`.
