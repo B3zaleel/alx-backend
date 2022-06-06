@@ -29,7 +29,7 @@ This project contains tasks for learning to create a queueing system in JavaScri
   + **Requirements:**
     + To import the library, you need to use the keyword `import`.
 
-+ [ ] 2. **Node Redis client and basic operations**
++ [x] 2. **Node Redis client and basic operations**
   + In a file [`1-redis_op.js`](1-redis_op.js), copy the code you previously wrote ([`0-redis_client.js`](0-redis_client.js)).
   + Add two functions:
     + `setNewSchool`:
