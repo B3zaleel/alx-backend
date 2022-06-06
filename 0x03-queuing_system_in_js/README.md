@@ -289,7 +289,7 @@ This project contains tasks for learning to create a queueing system in JavaScri
         Notification job #49 completed
         ```
 
-+ [ ] 10. **Writing the job creation function**
++ [x] 10. **Writing the job creation function**
   + In a file named [`8-job.js`](8-job.js), create a function named `createPushNotificationsJobs`:
     + It takes in two arguments: `jobs` (array of objects) and `queue` (`Kue` queue).
     + If `jobs` is not an array, it should throw an `Error` with message: `Jobs is not an array`.
