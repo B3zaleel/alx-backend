@@ -216,7 +216,7 @@ This project contains tasks for learning to create a queueing system in JavaScri
         + On the job failure, log to the console `Notification job JOB_ID failed: ERROR`.
         + On the job progress, log to the console `Notification job JOB_ID PERCENTAGE% complete`.
 
-+ [ ] 9. **Track progress and errors with Kue: Create the Job processor**
++ [x] 9. **Track progress and errors with Kue: Create the Job processor**
   + In a file named [`7-job_processor.js`](7-job_processor.js):
     + Create an array that will contain the blacklisted phone numbers. Add in it `4153518780` and `4153518781` - these 2 numbers will be blacklisted by our jobs processor.
     + Create a function `sendNotification` that takes 4 arguments: `phoneNumber`, `message`, `job`, and `done`:
