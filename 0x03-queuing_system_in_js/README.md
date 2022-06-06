@@ -51,7 +51,7 @@ This project contains tasks for learning to create a queueing system in JavaScri
   + Using `promisify`, modify the function `displaySchoolValue` to use ES6's `async / await`.
   + Same result as [`1-redis_op.js`](1-redis_op.js).
 
-+ [ ] 4. **Node Redis client and advanced operations**
++ [x] 4. **Node Redis client and advanced operations**
   + In a file named [`4-redis_advanced_op.js`](4-redis_advanced_op.js), use the client to store a hash value.
   + **Create Hash:**
     + Using `hset`, let's store the following:
