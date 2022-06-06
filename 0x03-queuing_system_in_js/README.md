@@ -225,7 +225,7 @@ This project contains tasks for learning to create a queueing system in JavaScri
       + Otherwise:
         + Track the progress to 50%.
         + Log to the console `Sending notification to PHONE_NUMBER, with message: MESSAGE`.
-    + Create a queue with Kue that will proceed job of the queue `push_notification_code_2` with two jobs at a time.
+    + Create a queue with Kue that will process job of the queue `push_notification_code_2` with two jobs at a time.
   + **Requirements:**
     + You only need one Redis server to execute the program.
     + You will need to have two node processes to run each script at the same time.
