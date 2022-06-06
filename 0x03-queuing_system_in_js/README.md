@@ -156,7 +156,7 @@ This project contains tasks for learning to create a queueing system in JavaScri
     + You must use `Kue` to set up the queue.
   + [`6-job_processor.js`](6-job_processor.js) and [`6-job_creator.js`](6-job_creator.js) are the same as [`5-subscriber.js`](5-subscriber.js) and [`5-publisher.js`](5-publisher.js) respectively but with a module to manage jobs.
 
-+ [ ] 8. **Track progress and errors with Kue: Create the Job creator**
++ [x] 8. **Track progress and errors with Kue: Create the Job creator**
   + In a file named [`7-job_creator.js`](7-job_creator.js):
     + Create an array `jobs` with the following data inside:
       ```js
