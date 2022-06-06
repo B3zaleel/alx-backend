@@ -1,5 +1,5 @@
 #!/usr/bin/yarn dev
-import { createClient } from 'redis';
+import { createClient, print } from 'redis';
 
 const client = createClient();
 
@@ -12,18 +12,12 @@ client.on('connect', () => {
 });
 
 const setNewSchool = (schoolName, value) => {
-  client.SET(schoolName, value, (_err, reply) => {
-    if (reply) {
-      console.log('Reply:', reply);
-    }
-  });
+  client.SET(schoolName, value, print);
 };
 
 const displaySchoolValue = (schoolName) => {
   client.GET(schoolName, (_err, reply) => {
-    if (reply) {
-      console.log(reply);
-    }
+    console.log(reply);
   });
 };
 
