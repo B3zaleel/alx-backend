@@ -4,7 +4,7 @@ This project contains tasks for learning to create a queueing system in JavaScri
 
 ## Tasks To Complete
 
-+ [ ] 0. **Install a redis instance**
++ [x] 0. **Install a redis instance**
   + Download, extract, and compile the latest stable Redis version (higher than 5.0.7 - [https://redis.io/download](https://redis.io/download)):
     ```powershell
     wget http://download.redis.io/releases/redis-6.0.10.tar.gz
