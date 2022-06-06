@@ -21,7 +21,7 @@ This project contains tasks for learning to create a queueing system in JavaScri
   + **Requirements:**
     + Running `get Holberton` in the client, should return `School`.
 
-+ [ ] 1. **Node Redis Client**
++ [x] 1. **Node Redis Client**
   + Install [node_redis](https://github.com/redis/node-redis) using yarn or npm.
   + Using Babel and ES6, write a script named [`0-redis_client.js`](0-redis_client.js). It should connect to the Redis server running on your machine:
     + It should log to the console the message `Redis client connected to the server` when the connection to Redis works correctly.
