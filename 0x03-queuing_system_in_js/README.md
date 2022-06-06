@@ -10,13 +10,14 @@ This project contains tasks for learning to create a queueing system in JavaScri
     wget http://download.redis.io/releases/redis-6.0.10.tar.gz
     tar xzf redis-6.0.10.tar.gz
     cd redis-6.0.10
-    make
+    make MALLOC=libc # for Linux systems
+    # make MALLOC=jemalloc # for Mac OS X systems
     ```
     + Start Redis in the background with `src/redis-server`.
     + Make sure that the server is working with a ping `src/redis-cli ping`.
     + Using the Redis client again, set the value `School` for the key `Holberton`.
     + Kill the server with the process id of the redis-server (hint: use ps and grep).
-  + Copy the [`dump.rdb`](dump.rdb) from the `redis-5.0.7` directory into the root of the Queuing project.
+  + Copy the [`dump.rdb`](dump.rdb) from the `redis-5.0.7` directory into the root of this project.
   + **Requirements:**
     + Running `get Holberton` in the client, should return `School`.
 
