@@ -17,7 +17,7 @@ This project contains tasks for learning to create a queueing system in JavaScri
     + Make sure that the server is working with a ping `src/redis-cli ping`.
     + Using the Redis client again, set the value `School` for the key `Holberton`.
     + Kill the server with the process id of the redis-server (hint: use ps and grep).
-  + Copy the [`dump.rdb`](dump.rdb) from the `redis-5.0.7` directory into the root of this project.
+  + Copy the [`dump.rdb`](dump.rdb) from the `redis-6.0.10` directory into the root of this project.
   + **Requirements:**
     + Running `get Holberton` in the client, should return `School`.
 
