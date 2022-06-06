@@ -3,7 +3,7 @@ import { createQueue } from 'kue';
 
 const queue = createQueue({name: 'push_notification_code'});
 
-const job = queue.create('user info', {
+const job = queue.create('push_notification_code', {
   phoneNumber: '07045679939',
   message: 'Account registered',
 }).save();
