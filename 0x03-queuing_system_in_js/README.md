@@ -374,7 +374,7 @@ This project contains tasks for learning to create a queueing system in JavaScri
     + Make sure to use the `await`/`async` keyword to get the value from Redis.
     + Make sure the format returned by the web application is always JSON and not text.
 
-+ [ ] 13. **Can I have a seat?**
++ [x] 13. **Can I have a seat?**
   + **Redis**
     + Create a Redis client:
       + Create a function `reserveSeat`, that will take the argument `number`, and set the key `available_seats` with the `number`.
