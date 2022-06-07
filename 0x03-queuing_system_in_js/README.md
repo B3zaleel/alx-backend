@@ -299,7 +299,7 @@ This project contains tasks for learning to create a queueing system in JavaScri
     + When a job is failed, it should log to the console `Notification job JOB_ID failed: ERROR`.
     + When a job is making progress, it should log to the console `Notification job JOB_ID PERCENT% complete`.
 
-+ [ ] 11. **Writing the test for job creation**
++ [x] 11. **Writing the test for job creation**
   + Now that you have created a job creator, let's add tests:
     + Import the function `createPushNotificationsJobs`.
     + Create a queue with `Kue`.
