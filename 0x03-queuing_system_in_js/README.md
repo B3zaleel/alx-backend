@@ -310,7 +310,7 @@ This project contains tasks for learning to create a queueing system in JavaScri
     + Make sure to enter the test mode without processing the jobs before executing the tests.
     + Make sure to clear the queue and exit the test mode after executing the tests.
 
-+ [ ] 12. **In stock?**
++ [x] 12. **In stock?**
   + **Data**
     + Create an array `listProducts` containing the list of the following products:
       + Id: 1, name: `Suitcase 250`, price: 50, stock: 4.
