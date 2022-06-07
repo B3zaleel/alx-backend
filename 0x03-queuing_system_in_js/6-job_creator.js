@@ -6,7 +6,7 @@ const queue = createQueue({name: 'push_notification_code'});
 const job = queue.create('push_notification_code', {
   phoneNumber: '07045679939',
   message: 'Account registered',
-}).save();
+});
 
 job
   .on('enqueue', () => {
@@ -18,3 +18,4 @@ job
   .on('failed attempt', () => {
     console.log('Notification job failed');
   });
+job.save();
