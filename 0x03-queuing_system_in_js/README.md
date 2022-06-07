@@ -67,7 +67,7 @@ This project contains tasks for learning to create a queueing system in JavaScri
   + **Display Hash:**
     + Using `hgetall`, display the object stored in Redis. It should return the following:
       ```powershell
-      bob@dylan:~$ npm run dev 4-redis_advanced_op.js
+      bob@dylan:~$ yarn dev 4-redis_advanced_op.js
 
       > queuing_system_in_js@1.0.0 dev /root
       > nodemon --exec babel-node --presets @babel/preset-env "4-redis_advanced_op.js"
@@ -233,7 +233,7 @@ This project contains tasks for learning to create a queueing system in JavaScri
     + Executing the jobs list should log to the console the following:
       + Terminal 2:
       ```powershell
-      bob@dylan:~$ npm run dev 7-job_processor.js
+      bob@dylan:~$ yarn dev 7-job_processor.js
 
       > queuing_system_in_js@1.0.0 dev /root
       > nodemon --exec babel-node --presets @babel/preset-env "7-job_processor.js"
