@@ -380,7 +380,7 @@ This project contains tasks for learning to create a queueing system in JavaScri
       + Create a function `reserveSeat`, that will take the argument `number`, and set the key `available_seats` with the `number`.
       + Create a function `getCurrentAvailableSeats`, it will return the current number of available seats (by using `promisify` for Redis).
       + When launching the application, set the number of available to 50.
-      + Initialize the boolean `reservationEnabled` to `true` - it will be turn to `false` when no seat will be available.
+      + Initialize the boolean `reservationEnabled` to `true` - it will be turned to `false` when no seat will be available.
   + **`Kue` queue**
     + Create a `Kue` queue.
   + **Server**
