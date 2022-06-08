@@ -34,9 +34,14 @@ describe('createPushNotificationsJobs', () => {
         phoneNumber: '44556677889',
         message: 'Use the code 1982 to verify your account',
       },
+      {
+        phoneNumber: '98877665544',
+        message: 'Use the code 1738 to verify your account',
+      },
     ];
     createPushNotificationsJobs(jobInfos, QUEUE);
-    expect(QUEUE.testMode.jobs.length).to.equal(1);
+    expect(QUEUE.testMode.jobs.length).to.equal(2);
+    expect(QUEUE.testMode.jobs[0].data).to.deep.equal(jobInfos[0]);
     expect(QUEUE.testMode.jobs[0].type).to.equal('push_notification_code_3');
     QUEUE.process('push_notification_code_3', () => {
       expect(
